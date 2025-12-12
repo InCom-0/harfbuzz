@@ -550,8 +550,11 @@ endif()
 if(HB_BUILD_SUBSET)
   add_library(harfbuzz-subset $<TARGET_OBJECTS:harfbuzz_objects> ${subset_project_sources} ${subset_project_headers})
   list(APPEND project_headers ${PROJECT_SOURCE_DIR}/src/hb-subset.h ${PROJECT_SOURCE_DIR}/src/hb-subset-serialize.h)
-  add_dependencies(harfbuzz-subset)
-  target_link_libraries(harfbuzz-subset harfbuzz ${THIRD_PARTY_LIBS})
+  # add_dependencies(harfbuzz-subset)
+  target_link_libraries(harfbuzz-subset ${THIRD_PARTY_LIBS})
+  target_include_directories(harfbuzz-subset PUBLIC
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+    "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/harfbuzz>")
   set_target_properties(harfbuzz-subset PROPERTIES VISIBILITY_INLINES_HIDDEN TRUE)
 
   if(MINGW)
