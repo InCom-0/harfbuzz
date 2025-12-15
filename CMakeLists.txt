@@ -152,12 +152,12 @@ set (HB_VERSION_MICRO ${CMAKE_MATCH_4})
 ## Define sources and headers of the project
 set (project_sources ${PROJECT_SOURCE_DIR}/src/harfbuzz.cc) # use amalgam source
 set (subset_project_sources
-     ${PROJECT_SOURCE_DIR}/src/hb-number.cc
+    #  ${PROJECT_SOURCE_DIR}/src/hb-number.cc
      ${PROJECT_SOURCE_DIR}/src/hb-number.hh
-     ${PROJECT_SOURCE_DIR}/src/hb-ot-cff1-table.cc
-     ${PROJECT_SOURCE_DIR}/src/hb-ot-cff2-table.cc
+    #  ${PROJECT_SOURCE_DIR}/src/hb-ot-cff1-table.cc
+    #  ${PROJECT_SOURCE_DIR}/src/hb-ot-cff2-table.cc
      ${PROJECT_SOURCE_DIR}/src/hb-ot-post-table-v2subset.hh
-     ${PROJECT_SOURCE_DIR}/src/hb-static.cc
+    #  ${PROJECT_SOURCE_DIR}/src/hb-static.cc
      ${PROJECT_SOURCE_DIR}/src/hb-subset-cff-common.cc
      ${PROJECT_SOURCE_DIR}/src/hb-subset-cff-common.hh
      ${PROJECT_SOURCE_DIR}/src/hb-subset-cff1.cc
