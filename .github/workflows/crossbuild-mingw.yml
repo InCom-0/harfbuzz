@@ -48,7 +48,7 @@ jobs:
     - name: Test
       run: meson devenv -Cbuild-win${{ matrix.ARCH }} meson test -t 10 --print-errorlogs --suite=harfbuzz
     - name: Archive artifacts
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6.0.0
       with:
         name: harfbuzz-win${{ matrix.ARCH }}
         path: harfbuzz-win${{ matrix.ARCH }}.zip
@@ -64,7 +64,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6.0.1
       - name: Download artifacts
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           merge-multiple: true
       - name: Rename artifacts
